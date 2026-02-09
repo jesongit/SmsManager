@@ -1,4 +1,6 @@
+# ========================
 # Python
+# ========================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,26 +10,68 @@ venv/
 env/
 .venv/
 .env
-
-# Node
-node_modules/
+.env.local
+*.egg-info/
 dist/
 build/
+.eggs/
+
+# ========================
+# Node.js
+# ========================
+node_modules/
+pnpm-store/
+yarn-error.log
 *.local
 
+# ========================
 # Database
+# ========================
 *.db
 *.sqlite
+*.sqlite3
+*.db-journal
 
+# ========================
 # IDE
+# ========================
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
+# ========================
 # OS
+# ========================
 .DS_Store
 Thumbs.db
+ehthumbs.db
+*.pid
+*.seed
 
+# ========================
 # Logs
+# ========================
 *.log
+logs/
+*.log.*
+
+# ========================
+# Testing
+# ========================
+.pytest_cache/
+.coverage
+htmlcov/
+.nyc_output/
+cover/
+
+# ========================
+# Project specific
+# ========================
+backend/data/
+frontend/dist/
+*.pem
+*.key
+*.crt
+!.gitkeep
