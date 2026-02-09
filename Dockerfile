@@ -6,6 +6,10 @@ FROM docker.1ms.run/node:20-alpine AS frontend-builder
 # 配置 npm 源为阿里云镜像
 RUN npm config set registry https://registry.npmmirror.com/
 
+# 跳过 puppeteer 下载 Chrome（仅用于测试）
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+
 # 设置工作目录
 WORKDIR /app
 
