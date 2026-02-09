@@ -1,7 +1,7 @@
 # ========================
 # 第一阶段：构建前端
 # ========================
-FROM node:20-alpine AS frontend-builder
+FROM docker.1ms.run/node:20-alpine AS frontend-builder
 
 # 配置 npm 源为阿里云镜像
 RUN npm config set registry https://registry.npmmirror.com/
@@ -24,7 +24,7 @@ RUN npm run build
 # ========================
 # 第二阶段：运行后端
 # ========================
-FROM python:3.13-slim
+FROM docker.1ms.run/python:3.13-slim
 
 # 配置 apt 源为阿里云镜像（阿里云 Debian 镜像站）
 RUN sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources 2>/dev/null || \
